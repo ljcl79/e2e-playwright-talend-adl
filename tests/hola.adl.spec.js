@@ -8,4 +8,15 @@ test.describe('Suite de bienvenida a Playwright', () => {
         // 3. Confirmamos que la página contiene la palabra "Santiago"
         await expect(page.locator('body')).toContainText('Santiago');
     });
+
+    test('Prueba sobre Proyectos ADL', async ({ page }) => {
+        await page.goto('https://proyectos.desafiolatam.com/users/sign_in');
+        await page.getByRole('textbox', { name: 'Correo Electrónico' }).click();
+        await page.getByRole('textbox', { name: 'Correo Electrónico' }).fill('leo@leo.com');
+        await page.getByRole('textbox', { name: 'Contraseña' }).click();
+        await page.getByRole('textbox', { name: 'Contraseña' }).fill('pepito');
+        await page.locator('div').first().click();
+        await page.getByRole('button', { name: 'Ingresar' }).click();
+        await expect(page.locator('body')).toContainText('Email o contraseña inválidos.');
+    });
 });
