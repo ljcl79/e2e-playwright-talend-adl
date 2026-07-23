@@ -18,7 +18,6 @@ test.describe("Probando Escenarios de Backend", () => {
                 status: 200,
                 body: JSON.stringify([])
             });
-            await route.fulfill
         });
         await page.goto('https://ecommerce-js-test.vercel.app/');
         await page.getByRole('textbox', { name: 'Search products...' }).fill('mens');
