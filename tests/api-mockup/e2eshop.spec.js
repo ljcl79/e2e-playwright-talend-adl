@@ -1,3 +1,13 @@
+/*
+Hacer un set de pruebas de comportamientos entre front y back:
+
+Site: https://github.com/ljcl79/e2e-playwright-talend-adl 
+Escenarios:
+0 productos retornados. Esperado: Mensaje de que no hay productos disponibles.
+Error 403. Mensaje de que se intentó una operación no valida.
+Error 500. Mensaje de que ocurrió un error de backend
+*/
+
 import test, { expect } from "@playwright/test";
 
 test.describe("Probando Escenarios de Backend", () => {
